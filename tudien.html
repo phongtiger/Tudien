@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id = "nhapvao" type="text">
+<button type="button" onclick="timkiem()">Tìm kiếm</button>
+<p id = "kq"></p>
+<script>
+    let anh = ["people","history", "way", "art" , "world", "information"];
+    let viet = ["người", "lịch sử", "con đường", "nghệ thuật", "thế giới", "thông tin"];
+    let nhapvao = "";
+    let nghia = "";
+    let dem = 0;
+    function timkiem() {
+        nhapvao = document.getElementById("nhapvao").value;
+        for(let i = 0; i<anh.length; i++){
+            if(nhapvao==anh[i]){
+                nghia= viet[i];
+                dem++;
+            }
+        }
+        if(dem>0){
+            document.getElementById("kq").innerHTML= "it means: " +nghia
+        }else {
+            document.getElementById("kq").innerHTML= "Not found."
+        }
+    }
+</script>
+</body>
+</html>
